@@ -9,7 +9,6 @@ package ru.job4j.concurrent;
  * @version 1.0
  * @since 22.11.2021
  */
-
 public class ConcurrentOutput {
     public static void main(String[] args) {
         Thread another = new Thread(() -> System.out.println(
