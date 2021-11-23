@@ -23,11 +23,11 @@ public class ThreadState {
         System.out.println(first.getState());
         System.out.println(second.getState());
 
-        if (first.getState() == Thread.State.TERMINATED
-                && second.getState() == Thread.State.TERMINATED) {
+        while (first.getState() != Thread.State.TERMINATED
+                && second.getState() != Thread.State.TERMINATED) {
 
-            System.out.println(first.getState());
-            System.out.println(second.getState());
+            System.out.println("first.getState() " + first.getState());
+            System.out.println("second.getState()" + second.getState());
 
             System.out.println("Work done!");
         }
