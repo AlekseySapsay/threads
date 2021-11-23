@@ -16,11 +16,20 @@ public class ThreadState {
                 () -> System.out.println(Thread.currentThread().getName()));
         Thread second = new Thread(
                 () -> System.out.println(Thread.currentThread().getName()));
+
         first.start();
         second.start();
-        second.join();
-        first.join();
 
-        System.out.println("Work done!");
+        System.out.println(first.getState());
+        System.out.println(second.getState());
+
+        if (first.getState() == Thread.State.TERMINATED
+                && second.getState() == Thread.State.TERMINATED) {
+
+            System.out.println(first.getState());
+            System.out.println(second.getState());
+
+            System.out.println("Work done!");
+        }
     }
 }
