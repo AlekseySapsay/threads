@@ -8,7 +8,6 @@ package ru.job4j.ref;
  * @version 1.0
  * @since 25.11.2021
  */
-
 public class User {
     private int id;
     private String name;

@@ -49,22 +49,16 @@ public class ShareNotSafe {
                 + cache.findById(2).getName());
 
         System.out.println("cache.findAll() " + cache.findAll().toString());
-        //System.out.println("cache.findAll() " + cache.findAll().toString());
-        //System.out.println(cache.findById(0).getName());
-        //System.out.println("cache.findAll() " + cache.findAll().toString());
+
         System.out.println("cache.findById(1).getName(): " + cache.findById(1).getName());
         System.out.println("cache.findById(2).getName(): " + cache.findById(2).getName());
 
         cache.findById(1).setName("New Name");
         System.out.println("cache.findById(1).getName() after rename: " + cache.findById(1).getName());
 
-        //System.out.println("cache.findById(2).getName(): " + cache.findById(2).getName());
         List<User> userList = new ArrayList<User>();
         userList.addAll(cache.findAll());
-        //userList.remove(user);
+
         System.out.println("userList.toString() " + userList.toString());
-
-
-
     }
 }
