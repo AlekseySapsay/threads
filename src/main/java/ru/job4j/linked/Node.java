@@ -15,7 +15,7 @@ package ru.job4j.linked;
  * @since 24.11.2021
  */
 
-public class Node<T> {
+public final class Node<T> {
     private final Node<T> next;
     private final T value;
 
