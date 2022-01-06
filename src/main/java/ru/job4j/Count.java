@@ -1,4 +1,5 @@
 package ru.job4j;
+
 /**
  * https://job4j.ru/profile/exercise/72/task-view/404
  * <p>
