@@ -1,0 +1,7 @@
+File to try work with commits
+
+3.3. Объединение нескольких коммитов. [#33084]
+
+https://job4j.ru/profile/exercise/79/task-view/432
+
+commit2
