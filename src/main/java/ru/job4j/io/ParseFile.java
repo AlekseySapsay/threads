@@ -1,17 +1,6 @@
 package ru.job4j.io;
 
 import java.io.*;
-
-/**
- * https://job4j.ru/profile/exercise/73/task-view/410
- * Критическая секция с блоком synchronized
- * и монитор this
- *
- * @author AlexSapsay (sapsayalexey@gmail.com)
- * @version 1.0
- * @since 25.11.2021
- */
-
 public final class ParseFile {
     private final File file;
 

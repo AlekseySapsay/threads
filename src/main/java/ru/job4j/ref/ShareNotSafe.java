@@ -1,19 +1,7 @@
 package ru.job4j.ref;
 
-import org.checkerframework.checker.units.qual.A;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
-
-/**
- * https://job4j.ru/profile/exercise/72/task-view/408
- * Thread без общих ресурсов
- *
- * @author AlexSapsay (sapsayalexey@gmail.com)
- * @version 1.0
- * @since 25.11.2021
- */
 
 public class ShareNotSafe {
     public static void main(String[] args) throws InterruptedException {
