@@ -4,17 +4,6 @@ import java.io.BufferedInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
-
-/**
- * https://job4j.ru/profile/exercise/71/task-view/403
- * <p>
- * В этом задании нужно написать консольную программу - аналог wget.
- *
- * @author AlexSapsay (sapsayalexey@gmail.com)
- * @version 1.0
- * @since 06.01.2022
- */
-
 public class Wget implements Runnable {
     private final String url;
     private final int speed;
