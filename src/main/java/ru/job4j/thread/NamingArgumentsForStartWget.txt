@@ -1,0 +1,2 @@
+add this arguments in to Edit configuration for starting Wget.class
+"https://raw.githubusercontent.com/peterarsentev/course_test/master/pom.xml" 100

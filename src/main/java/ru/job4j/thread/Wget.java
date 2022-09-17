@@ -17,30 +17,16 @@ public class Wget implements Runnable {
     @Override
     public void run() {
         try (BufferedInputStream in = new BufferedInputStream(new URL(url).openStream());
-             FileOutputStream fileOutputStream = new FileOutputStream("pom_tmp.xml")) {
-            long startTime = 0;
-            float totalTime = 0;
-            float size = 0;
-            float sleepInMiliseconds = 0;
-
+             FileOutputStream fileOutputStream = new FileOutputStream("src/main/java/ru/job4j/thread/file.xml")) {
             byte[] dataBuffer = new byte[speed];
-            System.out.println("Start loading ... ");
-            System.out.println("Loaded.");
-            int bytesRead;
-            startTime = System.nanoTime();
-            System.out.println("startTime :" + startTime);
+            int bytesReadied;
 
-            while ((bytesRead = in.read(dataBuffer, 0, speed)) != -1) {
-                totalTime = System.nanoTime() - startTime;
-                System.out.println("totalTime :" + totalTime);
-                fileOutputStream.write(dataBuffer, 0, bytesRead);
-                sleepInMiliseconds = (speed * 1_000_000_000 - totalTime);
-                System.out.println("sleepInMiliseconds  : " + sleepInMiliseconds);
-
-                if (totalTime < speed * 1_000_000_000) {
-                    Thread.sleep((long) sleepInMiliseconds / 1_000_000);
+            while ((bytesReadied = in.read(dataBuffer, 0, speed)) != -1) {
+                fileOutputStream.write(dataBuffer, 0, bytesReadied);
+                if (bytesReadied < speed) {
+                    Thread.sleep(bytesReadied * 1_000L / speed);
                 }
-                startTime = System.nanoTime();
+                Thread.sleep(1000);
             }
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
@@ -51,10 +37,7 @@ public class Wget implements Runnable {
         if (args.length < 2) {
             throw new IllegalArgumentException("Not enough arguments, add additional arguments and try again");
         }
-        if (!args[0].endsWith(".xml")) {
-            throw new IllegalArgumentException("Invalid link for downloading");
-        }
-        if (!args[1].matches("^(1024)")) {
+        if (!args[1].matches("^(100)$")) {
             throw new IllegalArgumentException("Not enable data format");
         }
     }
