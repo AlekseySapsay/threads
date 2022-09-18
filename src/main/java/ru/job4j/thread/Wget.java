@@ -52,9 +52,10 @@ public class Wget implements Runnable {
                 totalSizeBytes += downloadData;
                 totalTimeSeconds += 1;
             }
+            totalTimeSeconds = totalTimeSeconds - 1;
             System.out.println("total size bytes : " + totalSizeBytes);
             System.out.println("total time seconds : " + totalTimeSeconds);
-            System.out.println("average speed : " + totalSizeBytes / (totalTimeSeconds - 1));
+            System.out.println("average speed : " + totalSizeBytes / totalTimeSeconds);
             System.out.println("Loading completed ...");
 
         } catch (IOException | InterruptedException e) {
