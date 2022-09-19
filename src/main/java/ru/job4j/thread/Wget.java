@@ -44,11 +44,15 @@ public class Wget implements Runnable {
             while ((bytesReadied = in.read(dataBuffer, 0, speed)) != -1) {
                 fileOutputStream.write(dataBuffer, 0, bytesReadied);
                 downloadData = bytesReadied;
-                deltaTimeSec = (float) ((currentTimeMillis() - startTimeMs) / 1_000_000.0);
-                if ((downloadData >= speed) && (deltaTimeSec < 1)) {
-                    long threadPauseMs = (long) ((1 - deltaTimeSec) * 1000);
-                    Thread.sleep(threadPauseMs);
+
+                if ((downloadData >= speed)) {
+                    deltaTimeSec = (float) ((currentTimeMillis() - startTimeMs) / 1_000_000.0);
+                    if (deltaTimeSec < 1) {
+                        long threadPauseMs = (long) ((1 - deltaTimeSec) * 1000);
+                        Thread.sleep(threadPauseMs);
+                    }
                 }
+
                 totalSizeBytes += downloadData;
                 totalTimeSeconds += 1;
             }
